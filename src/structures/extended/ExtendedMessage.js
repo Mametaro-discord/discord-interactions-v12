@@ -54,7 +54,7 @@ class ExtendedMessage extends Message {
 	/**
 	 * @param {StringResolvable}
 	 * @optional {MessageOptions}
-	 * @return {Message}
+	 * @return {Promise<Message>}
 	 */
 	async edit(content, options) {
 		if (options === null) options = {

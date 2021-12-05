@@ -54,6 +54,13 @@ class MessageComponentInteraction extends BaseInteraction {
 	 * @type {boolean}
 	 * @readonly
 	 */
+	get isEphemeral() {
+		return this.reply.ephemeral;
+	};
+	/**
+	 * @type {boolean}
+	 * @readonly
+	 */
 	get deferred() {
 		return this.reply.deferred;
 	};
@@ -67,7 +74,6 @@ class MessageComponentInteraction extends BaseInteraction {
 	/**
 	 * @transform data from api
 	 * @param {APIMessageComponent[]}
-	 * @param {boolean} whether the result is array
 	 * @return {MessageComponent[]}
 	 */
 	static resolveComponents(arr) {

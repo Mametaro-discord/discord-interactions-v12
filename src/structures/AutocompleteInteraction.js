@@ -24,7 +24,7 @@ class AutocompleteInteraction extends BaseInteraction {
 		/**
 		 * @type {boolean}
 		 */
-		this.responed = false;
+		this.responded = false;
 		/**
 		 * @type {AutocompleteOption[]}
 		 */
@@ -43,8 +43,8 @@ class AutocompleteInteraction extends BaseInteraction {
 	 * @param {ApplicationCommandOptionChoice[]}
 	 * @return {Promise<undefined>}
 	 */
-	async responed(choices) {
-		if (this.responed) throw new Error('This interaction is already responed.');
+	async respond(choices) {
+		if (this.responded) throw new Error('This interaction is already responded.');
 
 		await this.client.api.interactions(this.id, this.token).callback.post({
 			data: {
@@ -55,7 +55,7 @@ class AutocompleteInteraction extends BaseInteraction {
 			},
 			auth: false
 		});
-		this.responed = true;
+		this.responded = true;
 	}
 	/**
 	 * @param {APIAutocompleteOption | APIAutocompleteOption[]}

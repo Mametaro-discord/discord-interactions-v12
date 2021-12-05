@@ -22,10 +22,13 @@ class InteractionAuthor extends Base {
 		this.member = interaction.guild && interaction.guild.members.cache.get(interaction.userId);
 	};
 	/**
-	 * @return {this}
+	 * @return {Promise<this>}
 	 */
 	async fetch() {
 		this.user = this.client.users.fetch(this.interaction.userId);
 		this.member = this.interaction.guild && this.interaction.guild.members.fetch(this.interaction.userId);
-	}
-}
+		return this;
+	};
+};
+
+module.exports = InteractionAuthor;

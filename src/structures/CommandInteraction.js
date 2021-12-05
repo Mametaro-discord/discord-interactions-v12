@@ -44,6 +44,13 @@ class CommandInteraction extends BaseInteraction {
 	 * @type {boolean}
 	 * @readonly
 	 */
+	get isEphemeral() {
+		return this.reply.ephemeral;
+	}
+	/**
+	 * @type {boolean}
+	 * @readonly
+	 */
 	get deferred() {
 		return this.reply.deferred;
 	};

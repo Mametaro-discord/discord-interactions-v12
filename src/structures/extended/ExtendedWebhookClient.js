@@ -113,7 +113,7 @@ class ExtendedWebhookClient extends WebhookClient {
 	 * @param {string}
 	 * @return {undefined}
 	 */
-	async delete(id) {
+	async deleteMessage(id) {
 		await this.client.api.webhooks(this.id, this.token).messages(id).delete({
 			auth: false
 		});

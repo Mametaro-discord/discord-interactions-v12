@@ -155,7 +155,7 @@ class InteractionReply extends Base {
 
 		if (this.ephemeral) throw new Error('The reply is ephemeral.');
 
-		return this.webhook.fetchMessage('@original');
+		await this.webhook.deleteMessage('@original');
 	};
 };
 

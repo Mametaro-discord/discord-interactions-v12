@@ -1,17 +1,9 @@
-const fs = require('fs');
-const Types = require('../src/interfaces/Types');
+const { message } = require('./error');
 
-let arr = [];
+console.log(message);
 
-for (i in Types) {
-	arr.push(
-			`export type ${i} = ` + 
-			Object.keys(Types[i])
-				.filter(elm => !elm.match(/[0-9]+/))
-				.map(elm => `\'${elm}\'`)
-				.join(' | ') + ';'
-		);
-};
+Object.assign(message, {
+	message: 'STRING'
+});
 
-const content = arr.join('\n\n');
-fs.writeFileSync('Types.txt', content);
+console.log(require('./error').message);

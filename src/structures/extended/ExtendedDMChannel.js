@@ -10,7 +10,7 @@ class ExtendedDMChannel extends DMChannel {
 	/**
 	 * @param {any}
 	 * @optional {MessageOptions}
-	 * @return {Message | APIMessage}
+	 * @return {APIMessage | Message}
 	 */
 	async send(content, options) {
 		if ((this instanceof GuildMember) || (this instanceof User)) {
@@ -31,7 +31,7 @@ class ExtendedDMChannel extends DMChannel {
 	};
 	/**
 	 * @param {Function}
-	 * @optional {MessageComponentCollectorOptions}
+	 * @optional {InteractionCollectorOptions}
 	 * @return {InteractionCollector}
 	 */
 	createMessageComponentCollector(filter, options) {
